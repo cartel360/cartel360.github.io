@@ -4,6 +4,8 @@ icon: fas fa-info-circle
 order: 4
 ---
 
+> **Skills**: Python, C#, TypeScript, JavaScript, Dart, PHP, SQL, .NET, Flutter, Django, Angular, Firebase
+{: .prompt-tip }
 
 
 I am a software engineer with over 4 years of experience, I have built and delivered innovative software solutions across diverse industries such as finance, education, and e-commerce. My expertise spans a wide range of technologies, including Python with the Django framework, Flutter for mobile app development, JavaScript and TypeScript with Angular for web development, and .NET for applications on the Microsoft platform.
