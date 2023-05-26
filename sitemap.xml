@@ -5,7 +5,7 @@
  {% for post in site.posts %}
     <url>
         <loc>{{site.url}}{{ post.url | remove: 'index.html' }}</loc>
-          <lastmod>{{ page.date | date_to_xmlschema }}</lastmod>
+          <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
         <priority>0.7</priority>
     </url>
     {% endfor %}
@@ -13,7 +13,6 @@
     {% if page.url != '/404.html' %}
       <url>
         <loc>{{ site.url }}{{ page.url | remove: 'index.html' }}</loc>
-        <lastmod>{{ page.date | date_to_xmlschema }}</lastmod>
         <priority>0.8</priority>
       </url>
     {% endif %}

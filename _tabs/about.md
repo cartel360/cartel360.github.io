@@ -2,6 +2,7 @@
 # the default layout is 'page'
 icon: fas fa-info-circle
 order: 4
+date: 2023-01-01
 ---
 
 > **Skills**: Python, C#, TypeScript, JavaScript, Dart, PHP, SQL, .NET, Flutter, Django, Angular, Firebase
