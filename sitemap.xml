@@ -2,13 +2,13 @@
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  {% for post in site.posts %}
+ {% for post in site.posts %}
     <url>
-      <loc>{{ site.url }}{{ post.url | remove: 'index.html' }}</loc>
-      <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
-      <priority>0.7</priority>
+        <loc>{{site.url}}{{ post.url | remove: 'index.html' }}</loc>
+          <lastmod>{{ page.date | date_to_xmlschema }}</lastmod>
+        <priority>0.7</priority>
     </url>
-  {% endfor %}
+    {% endfor %}
   {% for page in site.pages %}
     {% if page.url != '/404.html' %}
       <url>
@@ -19,4 +19,3 @@
     {% endif %}
   {% endfor %}
 </urlset>
-
