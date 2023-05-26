@@ -4,7 +4,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   {% for post in site.posts %}
     <url>
-      <loc>{{ site.url }}{{ post.url | remove: 'index.html' }}</loc>
+      <loc>{{ site.baseurl }}{{ post.url | remove: 'index.html' }}</loc>
       <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
       <priority>0.7</priority>
     </url>
