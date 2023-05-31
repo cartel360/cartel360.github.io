@@ -168,7 +168,7 @@ By using the binary search algorithm, the code achieves efficient searching in a
 
 
 ### Writing Self-Documenting Code
-Self-documenting code uses descriptive variable and function names and is easy to read and understand. It reduces the need for comments and makes it easier to maintain and improve the code over time. Writing self-documenting code is an essential component of code readability and clarity.Techniques for Enhancing Code Maintainability
+Self-documenting code uses descriptive variable and function names and is easy to read and understand. It reduces the need for comments and makes it easier to maintain and improve the code over time. Writing self-documenting code is an essential component of code readability and clarity.
 
 ```csharp
 // Calculate the total price of items in a shopping cart
