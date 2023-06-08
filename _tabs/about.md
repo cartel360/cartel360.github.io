@@ -9,7 +9,7 @@ date: 2023-01-01
 {: .prompt-tip }
 
 
-I am a software engineer with over 4 years of experience, I have built and delivered innovative software solutions across diverse industries such as finance, education, and e-commerce. My expertise spans a wide range of technologies, including Python with the Django framework, Flutter for mobile app development, JavaScript and TypeScript with Angular for web development, and .NET for applications on the Microsoft platform.
+I am a software engineer with over 4 years of experience, I have built and delivered innovative software solutions across diverse industries such as finance, education, and tech. My expertise spans a wide range of technologies, including Python with the Django framework, Flutter for mobile app development, JavaScript and TypeScript with Angular for web development, and .NET for applications on the Microsoft platform.
 
 What truly drives me is the limitless potential for impact that my work holds. Each day, I am motivated by the knowledge that the software I build can shape lives and transform businesses. This realization fuels my desire to continuously improve my skills and strive for excellence as a developer.
 

@@ -41,11 +41,11 @@ social:
   email: example@domain.com # change to your email address
   links:
     # The first element serves as the copyright owner's link
-    - https://twitter.com/caretl360 # change to your twitter homepage
-    - https://github.com/Billy_de_Cartel # change to your github homepage
+    - https://twitter.com/Billy_de_cartel # change to your twitter homepage
+    - https://github.com/cartel360 # change to your github homepage
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
-    # - https://www.linkedin.com/in/username
+    - https://www.linkedin.com/in/billy-okeyo
 
 google_site_verification: # fill in to your verification string
 
