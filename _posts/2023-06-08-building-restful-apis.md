@@ -1,7 +1,7 @@
 ---
 layout: post
 title: A Guide to Building RESTful APIs with Best Practices
-date: 2023-05-31 00:00:00 
+date: 2023-06-08 00:00:00 
 description: Building RESTful APIs has become an essential part of web development, allowing developers to create powerful, scalable, and flexible applications that can be accessed by clients across a range of devices and platforms.
 image: 
     path: /assets/img/Restful-apis.jpg 
