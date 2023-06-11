@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Effortless API Testing & Debugging with .http Files in Visual Studio
-date: 2023-06-12 00:00:00 
+date: 2023-06-11 00:00:00 
 description: Building RESTful APIs has become an essential part of web development, allowing developers to create powerful, scalable, and flexible applications that can be accessed by clients across a range of devices and platforms.
 image: 
     path: /assets/img/Http-File.jpg 
@@ -187,3 +187,5 @@ API documentation is critical for developers to understand the functionality and
 
 >HTTP files offer a clear and straightforward way to document APIs. HTTP files can be used to document APIs for testing purposes and to create reference documentation. The files' format allows developers to write code in a simple format that can be easily understood. Moreover, Integration with Visual Studio makes the process of generating API documentation far more manageable for developers.
 {: .prompt-tip }
+
+The source code for this article can be found  <a href="https://github.com/cartel360/Test-Http-VS" target="_blank">here</a>.
