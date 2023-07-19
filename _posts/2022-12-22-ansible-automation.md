@@ -39,7 +39,7 @@ There is no need for servers, daemons, or databases, and your library of modules
 
 The figure below shows how ansible works
 
-![ansible](../assets/img/ansible/img1.png)
+![ansible]({{site.baseurl}}/assets/img/ansible/img1.png)
 
 ## Setting up Ansible
 ### Installation Process

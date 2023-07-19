@@ -231,7 +231,7 @@ py manage.py runserver
 ```
 If everything runs without any issue, then we are good to proceed, navigate to **http://localhost:8000/admin** and login with the details you had created to access the admin site. Add some books and navigate to the home page i.e **http://localhost:8000/** to see if the books will be visible. You should see something like what is below:
 
-![books](../assets/img/multi-tenancy/img1.png)
+![books]({{site.baseurl}}/assets/img/multi-tenancy/img1.png)
 
 ## Implementing Multi-Tenancy
 We need to structure our system to support multiple databases i.e each client will be assigned their own database.

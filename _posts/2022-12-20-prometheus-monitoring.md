@@ -42,7 +42,7 @@ ts=2022-12-20T12:05:02.488Z caller=manager.go:941 level=info component="rule man
 
 Navigating to localhost port 9090 you should be able to see something like below:
 
-![prometheus running](../assets/img/prometheus/img2.png)
+![prometheus running]({{site.baseurl}}/assets/img/prometheus/img2.png)
 
 You can also run it as a docker container by running 
 ```bash
@@ -67,7 +67,7 @@ Some services and applications have their own metrics format and exposition meth
 
 **Prometheus exporter** is a "translator" program that can collect the server native metrics and re-publish these metrics using the prometheus metrics format.
 
-![exporter](../assets/img/prometheus/img3.png)
+![exporter]({{site.baseurl}}/assets/img/prometheus/img3.png)
 
 There are a bunch of prometheus exporters on the internat today and you can find more than one exporter for the same application thus when choosing an exporter tou need to correctly identity the application you want to monitor and the metrics you want to get before settling on the exporter to use.
 

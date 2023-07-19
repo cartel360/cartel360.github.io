@@ -140,17 +140,17 @@ With this setup, you can actually run IdentityServer already. It might have no U
 
 ### Testing Identity Server ###
 Once we start our application we will see a window to show that identity server has started
-![alt text](../assets/img/identity-server/ids4.png "identity server window")
+![alt text]({{site.baseurl}}/assets/img/identity-server/ids4.png "identity server window")
 
 Next we can navigate to `/.well-known/openid-configuration.`
 
-![alt text](../assets/img/identity-server/discovery.png "discovery document")
+![alt text]({{site.baseurl}}/assets/img/identity-server/discovery.png "discovery document")
 
 Looking at the discovery document in the **scopes_supported** we can see **api** has been added since we defined that in our scopes.
 
 Now we can try to retrieve a token from our authorization server. We will use postman to do our tests.
 
-![alt text](../assets/img/identity-server/postman1.jpg "postman")
+![alt text]({{site.baseurl}}/assets/img/identity-server/postman1.jpg "postman")
 
 In the above window:
 
@@ -170,7 +170,7 @@ In the above window:
 
 You can check the identity server console windows and check for responses, if the token generation was a success, it will show window like below:
 
-![alt text](../assets/img/identity-server/ids4_1.png "Identity server")
+![alt text]({{site.baseurl}}/assets/img/identity-server/ids4_1.png "Identity server")
 
 You can try testing with an invalid client id or client secret and note what responses you will get.
 
