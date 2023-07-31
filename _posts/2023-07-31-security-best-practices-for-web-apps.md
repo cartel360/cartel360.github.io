@@ -3,8 +3,8 @@ layout: post
 title: Security Best Practices for Web Application Development
 date: 2023-07-31 00:00:00 
 description: Web application security is of paramount importance in today's digital landscape, where cyber threats are ever-evolving. As businesses increasingly rely on web applications to interact with their customers and handle sensitive data, the need to protect these applications from malicious attacks becomes critical
-# image:
-#   path: /assets/img/web-apps-security.jpg 
+image:
+  path: /assets/img/web-apps-security.jpg 
 tags: [Productivity, Software, Security] # add tag
 categories: [Software Development]
 published: true
