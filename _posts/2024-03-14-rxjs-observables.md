@@ -4,7 +4,7 @@ title: RXJS Observables
 date: 2024-03-14 00:00:00 
 description: Reactive programming has gained significant popularity in the world of web development for its ability to handle asynchronous events efficiently. One of the key components in reactive programming is the concept of Observables, which play a crucial role in handling data streams and event handling
 image: 
-    path: /assets/img/RxJs-Observables.jpg
+    path: /assets/img/RxJS-Observables.jpg
 tags: [Productivity, RxJs, Angular] 
 categories: [Software Development]
 published: true
