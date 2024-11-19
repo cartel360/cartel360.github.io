@@ -5,7 +5,7 @@ date: 2024-05-07 00:00:00
 description: Design patterns play a crucial role in the world of software development, offering reusable solutions to common design problems. Understanding and implementing design patterns can significantly enhance the quality, efficiency, and maintainability of software projects.
 image: 
     path: /assets/img/design-patterns.jpg
-tags: [Productivity, Software, Design]
+tags: [Productivity, Software, Design-Pattern]
 categories: [Software Development]
 published: true 
 ---
