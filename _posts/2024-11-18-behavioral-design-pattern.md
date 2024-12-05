@@ -12,7 +12,7 @@ published: true
 
 Behavioral design patterns focus on the interaction between objects, defining how they communicate and collaborate. These patterns promote loose coupling and help manage complex flows of control and data. In this article, we will explore seven key behavioral design patterns: **Observer**, **Strategy**, **Command**, **Memento**, **Mediator**, **State**, and **Template Method**. 
 
-This is a continuation of **Introduction to Design Patterns**, if you haven't checked it out you can check it <a href="https://www.billyokeyo.com/posts/design-patterns/" target="_blank">here</a> 
+This is a continuation of **Introduction to Design Patterns**, if you haven't checked it out you can check it [here](/posts/design-patterns/).
 
 
 ## 1. Observer Pattern
