@@ -12,7 +12,7 @@ published: true
 
 Structural design patterns are one of the most critical aspects of software engineering by offering a formulary to recurring design problems. These patterns fall under the mission of architects and developers who intend to put together systems that can be enhanced, made to scale and remain flexible. This article is dedicated to structural design patterns and their consideration: what is their relevance, what types exist, advantages and disadvantages, principles and best practices including examples and problems to avoid. Through this examination of structural design patterns, the readers will learn how to utilize these patterns in their own works in order to enhance the quality and ease of maintenance of the software solutions they provide.
 
-This is a continuation of **Introduction to Design Patterns**, if you haven't checked it out you can check it <a href="https://www.billyokeyo.com/posts/design-patterns/" target="_blank">here</a> 
+This is a continuation of **Introduction to Design Patterns**, if you haven't checked it out you can check it <a href="https://www.billy-okeyo.netlify.app/posts/design-patterns/" target="_blank">here</a> 
 
 
 ## Why Use Structural Design Patterns?

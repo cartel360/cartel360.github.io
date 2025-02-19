@@ -217,4 +217,4 @@ No, dependency injection is a design pattern that enables inversion of control. 
 
 In conclusion, understanding and implementing dependency injection is an important technique for building flexible, maintainable, and scalable code. By following the best practices and leveraging popular frameworks, you can simplify your codebase, reduce coupling between objects, and improve code quality. With the knowledge you've gained from this article, you're now equipped to start using dependency injection in your next software development project and be Developer B.
 
-I have also done a separate article on [Dependency Injection in Angular](https://www.billyokeyo.com/posts/dependency-injection-in-angular/)
+I have also done a separate article on [Dependency Injection in Angular](https://www.billy-okeyo.netlify.app/posts/dependency-injection-in-angular/)

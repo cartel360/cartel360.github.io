@@ -12,7 +12,7 @@ published: true
 
 In software engineering, especially software design, a number of techniques are used to address the development of the processes of creating complex objects, called creational design patterns. The purposes of these patterns include the storing and hiding of the instantiation of an object, thereby facilitating the reuse and flexibility of the source code. The possibility of design and usage of a software system many times determines how robust and maintainable this system will be. This article provides an overview of a number of creational design patterns including, but not limited to, the Singleton, Factory Method, Abstract Factory, Prototype, and Builder patterns with their approaches, implementations, and use cases.
 
-This is a continuation of **Introduction to Design Patterns**, if you haven't checked it out you can check it <a href="https://www.billyokeyo.com/posts/design-patterns/" target="_blank">here</a> 
+This is a continuation of **Introduction to Design Patterns**, if you haven't checked it out you can check it <a href="https://www.billy-okeyo.netlify.app/posts/design-patterns/" target="_blank">here</a> 
 
 ## Creational Design Patterns: Where Objects Are Born
 ### Definition of Creational Design Patterns
