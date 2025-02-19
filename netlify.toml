@@ -3,7 +3,7 @@
   publish = "_site"
 
 [build.environment]
-  RUBY_VERSION = "2.7.2" # Match the version in your Gemfile
+  RUBY_VERSION = "3.2.2" # Match the version in your Gemfile
   RUBYGEMS_VERSION = "3.3.22"
 
 
