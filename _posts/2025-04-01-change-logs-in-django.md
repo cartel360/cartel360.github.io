@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Implementing Change Logs in a Django App
+title: Implementing Change Logs Django Apps
 categories: [Software Development]
 image: /assets/img/django-change-logs.jpg
 tags: [Python, Django, ChangeLogs]
@@ -9,8 +9,6 @@ render_with_liquid: false
 featured: true
 canonical_url: https://blogs.innova.co.ke/change-logs-in-django/
 ---
-
-# Implementing Change Logs in a Django App
 
 Change logs (or audit logs) are crucial for tracking modifications to your data over time. They provide transparency, accountability, and can be invaluable for debugging or compliance purposes. In this comprehensive guide, I'll walk through several approaches to implementing change logs in Django, complete with practical examples.
 
