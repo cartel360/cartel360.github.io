@@ -9,18 +9,13 @@ date: 2023-01-01
 {: .prompt-tip }
 
 
-I am a software engineer with over 4 years of experience, I have built and delivered innovative software solutions across diverse industries such as finance, education, and tech. My expertise spans a wide range of technologies, including Python with the Django framework, Flutter for mobile app development, JavaScript and TypeScript with Angular for web development, and .NET for applications on the Microsoft platform.
+I’m a software engineer who thrives on clean code, coffee, and conquering challenges (usually in that order). I’ve spent my time optimizing algorithms, debugging mysteries, and creating systems that—let’s face it—usually work just as expected (except when they don’t, and then I’ve got a few witty excuses ready).
 
-What truly drives me is the limitless potential for impact that my work holds. Each day, I am motivated by the knowledge that the software I build can shape lives and transform businesses. This realization fuels my desire to continuously improve my skills and strive for excellence as a developer.
+Whether it's building scalable backend solutions, crafting responsive frontends, or untangling the knots of legacy code, I live for the thrill of solving problems (and sometimes creating them—just to see what happens). I specialize in Python, C#, TypeScript, JavaScript, Dart, PHP, SQL, .NET, Flutter, Django, Angular, Firebase and I am a proud advocate of continuous learning because, let’s be honest, who really understands quantum computing on the first try?
 
-Beyond coding, I find joy in pursuing various hobbies and interests. Watching movies allows me to immerse myself in different narratives, explore unique storytelling techniques, and appreciate the art of visual effects. It serves as a wellspring of inspiration for my own creative endeavors.
+When I’m not busy refactoring code, I enjoy contributing to open-source projects, obsessing over minimalistic UI design, playing video games and pondering the deeper questions of life like: ‘Why doesn’t my CSS work in Internet Explorer?’ and ‘Is the cloud just someone else’s computer?’
 
-In addition to movies, I am an avid video game enthusiast. Engaging with different games not only provides entertainment but also exposes me to diverse game mechanics, captivating user interfaces, and interactive experiences. These gaming experiences often inform and influence my own approach to software development.
+Need someone to create scalable systems that run smoother than a fresh pull request? troubleshoot like a detective, and do it all with a sense of humor that borders on the too sarcastic side, I’m your developer. Just don’t ask me to fix your printer, that’s beyond even my powers.
 
-As a firm believer in the power of collaboration, I actively contribute to open source projects. By participating in these initiatives, I engage with the developer community, share my knowledge and expertise, and contribute to the growth and improvement of the software development ecosystem.
-
-My well-organized nature plays a crucial role in my work. I prioritize efficiency and value clean code practices, robust testing methodologies, and effective project management. By maintaining an organized approach, I ensure that my work is of the highest quality, reliability, and maintainability.
-
-While my expertise primarily lies in web and mobile development, I am constantly seeking new challenges. Recently, I have delved into cloud computing and Cloud DevOps, driven by my eagerness to stay at the forefront of emerging technologies and industry trends. Cloud computing offers unparalleled scalability, flexibility, and cost-efficiency, while DevOps practices enhance collaboration between development and operations teams, optimizing software delivery and maintenance processes.
-
-In summary, my passion for coding, diverse skill set, and experience enable me to be a versatile and forward-thinking software engineer. I am fueled by the boundless potential of the products I build and their impact on the world. By continuously expanding my knowledge, problem-solving abilities, and staying ahead of industry advancements, I strive to make a meaningful difference through technology.
+> Code is poetry. And sometimes, I write a haiku. Other times, it’s more like an epic saga that ends with me crying at 3 AM and a GitHub issue that reads: ‘Works, but don’t ask how'
+{: .prompt-tip }
