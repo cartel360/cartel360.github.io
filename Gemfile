@@ -34,6 +34,14 @@ source "https://rubygems.org"
 
 gem "jekyll-theme-chirpy", "~> 6.1"
 gem "jekyll-feed"
+gem 'html-proofer', '3.19.4'
+gem 'nokogiri', '1.18.8'
+gem 'parallel', '1.27.0'
+gem 'rainbow', '3.1.1'
+gem 'typhoeus', '1.4.1'
+gem 'yell', '2.2.2'
+gem 'racc', '1.8.1'
+gem 'ethon', '0.16.0'
 
 group :test do
   gem "html-proofer", "~> 3.18"
