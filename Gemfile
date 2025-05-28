@@ -34,7 +34,7 @@ source "https://rubygems.org"
 
 gem "jekyll-theme-chirpy", "~> 6.1"
 gem "jekyll-feed"
-gem 'html-proofer', '3.19.4'
+gem 'html-proofer', '3.18'
 gem 'nokogiri', '1.18.8'
 gem 'parallel', '1.27.0'
 gem 'rainbow', '3.1.1'
