@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Unit, Integration, and End-to-End Tests: Building Confidence in Your Software"
+title: "Unit, Integration, and End-to-End Tests: Building Confidence in Your Software (Part 1)"
 categories: [Testing, Software Development]
 image: /assets/img/software-testing.webp
 tags: [Testing, Software Development, Quality Assurance]
