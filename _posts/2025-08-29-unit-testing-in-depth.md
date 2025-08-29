@@ -509,4 +509,5 @@ class DiscountServiceTest extends TestCase
 ## What’s Next in the Series
 
 Up next: **Integration Testing in Depth** — choosing boundaries, taming real dependencies, keeping tests reliable without turning them into E2E.
+Stay tuned!
 
