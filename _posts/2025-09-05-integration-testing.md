@@ -4,7 +4,7 @@ title: "Integration Testing in Depth : Test components working together (and not
 categories: [Testing, Integration-Testing, Software Development]
 image: /assets/img/software-testing.webp
 tags: [Testing, Software Development, Quality Assurance]
-description: Integration tests sit in the sweet spot between tiny, fast unit tests and slow, expensive end-to-end tests. They verify that multiple parts of your system cooperate correctly — e.g., your API layer talks to the DB the way you expect, background jobs persist state, or your service correctly handles responses from an external API.
+description: Integration tests sit in the sweet spot between tiny, fast unit tests and slow, expensive end-to-end tests. They verify that multiple parts of your system cooperate correctly, e.g., your API layer talks to the DB the way you expect, background jobs persist state, or your service correctly handles responses from an external API.
 ---
 
 
