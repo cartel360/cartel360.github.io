@@ -1,16 +1,14 @@
 ---
 layout: post
-title: "Unit Testing in Depth: Principles, Patterns, and Pragmatic Tactics (Part 2)"
+title: "Unit Testing in Depth: Principles, Patterns, and Pragmatic Tactics - Part 2"
 categories: [Testing, Unit-Testing, Software Development]
 image: /assets/img/software-testing.webp
 tags: [Testing, Software Development, Quality Assurance]
 description: Unit tests are the safety net that let you refactor without fear, document behavior without docs, and ship with confidence. Done well, they’re fast, reliable, and cheap to maintain. Done poorly, they’re flaky, slow, and ignored.
 ---
-
 Unit tests are the safety net that let you refactor without fear, document behavior without docs, and ship with confidence. Done well, they’re fast, reliable, and cheap to maintain. Done poorly, they’re flaky, slow, and ignored.
 
 This is a continuation of the the **Unit, Integration, and End-to-End Tests: Building Confidence in Your Software** series. In case you missed it, be sure to check out the previous posts for a solid foundation. This guide goes deep into **what makes a great unit test**, how to structure them, how to avoid common pitfalls, and how to design code that’s *easy* to unit test.
-
 
 ## What is a “Unit” (really)?
 
@@ -21,8 +19,7 @@ A **unit** is the smallest piece of behavior you care about verifying typically 
 * Can be run thousands of times **deterministically** and **quickly**.
 
 > Heuristic: if your test needs network access, sleeps, or a DB, it’s probably not a unit test.
-{: .prompt-tip}
-
+> {: .prompt-tip}
 
 ## The Goal of Unit Tests
 
@@ -31,7 +28,6 @@ A **unit** is the smallest piece of behavior you care about verifying typically 
 * **Enable refactoring** with confidence.
 * **Encourage good design** (loose coupling, small interfaces).
 
-
 ## Qualities of Great Unit Tests (F.I.R.S.T.)
 
 * **Fast** – run in milliseconds; okay to run on every save/commit.
@@ -39,7 +35,6 @@ A **unit** is the smallest piece of behavior you care about verifying typically 
 * **Repeatable** – same result every run; no flakiness.
 * **Self-validating** – clear pass/fail without manual inspection.
 * **Timely** – written close to when the code is written (test-first or test-soon).
-
 
 ## Anatomy of a Readable Test
 
@@ -67,7 +62,6 @@ test "calculate_total when valid items then returns sum minus discounts" {
 
 Good names save hours of log-digging later.
 
-
 ## What to Test (and What Not to)
 
 **Do test**
@@ -82,7 +76,6 @@ Good names save hours of log-digging later.
 * Framework code you don’t control.
 * Trivial getters/setters (unless there’s logic).
 * UI layout or CSS (move to integration/E2E if needed).
-
 
 ## Test Data Without Pain
 
@@ -102,21 +95,19 @@ Patterns:
 * **Mother Object**: canonical “valid” objects you tweak per test.
 * **Parameterized tests**: table-driven cases for variations.
 
-
 ## Test Doubles: Choose the Right Tool
 
 Not everything should be “real” in a unit test. Replace collaborators with **test doubles**:
 
-| Double    | Purpose                                             | Example                               |
-| --------- | --------------------------------------------------- | ------------------------------------- |
+| Double          | Purpose                                             | Example                                  |
+| --------------- | --------------------------------------------------- | ---------------------------------------- |
 | **Dummy** | Filler to satisfy signatures                        | `new LoggerDummy()` that’s never used |
-| **Stub**  | Provide canned returns                              | `ClockStub(now="2025-08-22")`         |
-| **Spy**   | Record calls for later assertions                   | `EmailSpy.sent_to("a@b.com") == true` |
-| **Mock**  | Pre-programmed expectations (behavior verification) | `Expect(repo.save(order))`            |
-| **Fake**  | Lightweight working impl                            | `InMemoryRepository` with a map       |
+| **Stub**  | Provide canned returns                              | `ClockStub(now="2025-08-22")`          |
+| **Spy**   | Record calls for later assertions                   | `EmailSpy.sent_to("a@b.com") == true`  |
+| **Mock**  | Pre-programmed expectations (behavior verification) | `Expect(repo.save(order))`             |
+| **Fake**  | Lightweight working impl                            | `InMemoryRepository` with a map        |
 
 **Guideline:** Prefer **stubs/spies/fakes**. Use **mocks** when you truly care about the interaction contract (e.g., exactly one call, in a specific order). Over-mocking couples tests to implementation details.
-
 
 ## Taming Non-Determinism (Time, Randomness, Concurrency, I/O)
 
@@ -152,13 +143,11 @@ Avoid real threads in unit tests. Extract logic to pure functions; test scheduli
 
 Abstract with ports/adapters (Repository, HttpClient, FileStore). Use **in-memory fakes**.
 
-
 ## Assertions that Pull Their Weight
 
 * Prefer **specific** asserts: `assert_equal(54, total)` over `assert_true(total < 60)`.
 * Provide **custom messages**: `assert_equal(54, total, "10% discount not applied")`.
 * Assert one **behavior** per test (multiple asserts okay if they describe one behavior).
-
 
 ## Property-Based Tests (when examples aren’t enough)
 
@@ -182,7 +171,6 @@ property "adding item increases total" {
 
 Use property tests to catch edge cases humans miss.
 
-
 ## Structuring Your Test Suite
 
 * **Mirror production structure**: `src/price/calculator.*` → `test/price/calculator_test.*`
@@ -190,13 +178,11 @@ Use property tests to catch edge cases humans miss.
 * **Common helpers** in `test_support/` (builders, fakes, assertions).
 * Keep **fixtures local** unless truly shared.
 
-
 ## Coverage: Useful, but Not the Goal
 
 * Track **line/statement** and **branch** coverage to find blind spots.
 * Don’t chase 100%. Aim for **meaningful coverage** of business logic and risk areas.
 * Complement with **mutation testing** if available (ensures tests can detect real changes).
-
 
 ## Test-Driven Development (TDD): Micro-cycles that Improve Design
 
@@ -208,24 +194,18 @@ Use property tests to catch edge cases humans miss.
 
 Even if you don’t TDD all the time, using short cycles on complex logic reduces waste and over-engineering.
 
-
 ## Common Unit Test Smells (and Fixes)
 
 * **Brittle tests** (fail after harmless refactors)
   → Assert on **behavior**, not internal calls/ordering (avoid over-mocking).
-
 * **Mega setups** (50-line arrange blocks)
   → Introduce **builders** and **sensible defaults**.
-
 * **Hidden dependencies** (time, singletons)
   → Add interfaces; inject **Clock/Random/Config**.
-
 * **Flaky tests** (sometimes fail)
   → Remove sleeps; use **fixed clocks**, **fakes**, and **synchronous** executors.
-
 * **Logic in tests** (ifs/loops)
   → Replace with **parameterized tests** or test data tables.
-
 
 ## Worked Example (End-to-End Unit Test Thought Process)
 
@@ -279,7 +259,6 @@ property "adding an item never decreases total when discount fixed" { ... }
 
 > Note how tests pin down rounding, clamping, and the order of operations—classic sources of real-world bugs.
 
-
 ## Design for Testability (so unit tests are easy)
 
 * **Dependency Injection**: pass collaborators (Clock, Repo) via constructor/params.
@@ -287,20 +266,17 @@ property "adding an item never decreases total when discount fixed" { ... }
 * **Small Interfaces**: program to ports; adapters do I/O.
 * **Single Responsibility**: smaller units are easier to test and reason about.
 
-
 ## Performance: Keep Tests Lightning-Fast
 
 * Avoid costly setup; prefer **in-memory** collaborators.
 * No sleeps/timeouts; fake the clock/scheduler.
 * Run unit tests in a **watch mode** locally; keep CI under seconds for this suite.
 
-
 ## When to Delete or Rewrite Tests
 
 * Requirements changed → Update tests to reflect new truth.
 * Test asserts an implementation detail → Rewrite to assert behavior.
 * Chronic flakiness → Fix root cause or remove; flaky tests destroy trust.
-  
 
 ## A Minimal Template You Can Reuse
 
@@ -324,7 +300,6 @@ suite PriceCalculatorTests:
       expect sut.total(item_lists, discount=0) >= 0
 ```
 
-
 ## Checklist: Before You Commit
 
 * [ ] Test name reads like a spec (explains *when/then*).
@@ -334,14 +309,11 @@ suite PriceCalculatorTests:
 * [ ] Fast (ms), repeatable, independent.
 * [ ] Data setup is minimal and readable (builder/fixtures).
 
-
-
 # Side-by-Side Examples
 
 We’ll use a simple scenario:
 
 > Function to calculate the **discounted price** given an original price and discount percentage.
-
 
 ### Python (pytest / unittest)
 
@@ -367,7 +339,6 @@ def test_apply_discount_invalid():
         apply_discount(100, 150)
 ```
 
-
 ### C# (xUnit)
 
 ```csharp
@@ -378,7 +349,7 @@ public class Discount
     {
         if (discount < 0 || discount > 100)
             throw new ArgumentException("Discount must be between 0 and 100");
-        
+      
         return price - (price * discount / 100);
     }
 }
@@ -409,7 +380,6 @@ public class DiscountTests
     }
 }
 ```
-
 
 ### TypeScript (Jest)
 
@@ -489,12 +459,12 @@ class DiscountServiceTest extends TestCase
 
 # Comparison Table
 
-| Aspect             | Unit Test Goal                                | Python (pytest) | C# (xUnit)      | TypeScript (Jest) | PHP (PHPUnit)     |
-| ------------------ | --------------------------------------------- | --------------- | --------------- | ----------------- | ----------------- |
-| **Framework**      | Testing tool used                             | pytest/unittest | xUnit           | Jest              | PHPUnit           |
-| **Isolation**      | Tests only the function logic                 | ✅               | ✅               | ✅                 | ✅                 |
-| **Error Handling** | Verify invalid inputs raise exceptions/errors | `pytest.raises` | `Assert.Throws` | `toThrow()`       | `expectException` |
-| **Speed**          | Very fast, no external dependency             | ⚡⚡⚡             | ⚡⚡⚡             | ⚡⚡⚡               | ⚡⚡⚡               |
+| Aspect                   | Unit Test Goal                                | Python (pytest)   | C# (xUnit)        | TypeScript (Jest) | PHP (PHPUnit)       |
+| ------------------------ | --------------------------------------------- | ----------------- | ----------------- | ----------------- | ------------------- |
+| **Framework**      | Testing tool used                             | pytest/unittest   | xUnit             | Jest              | PHPUnit             |
+| **Isolation**      | Tests only the function logic                 | ✅                | ✅                | ✅                | ✅                  |
+| **Error Handling** | Verify invalid inputs raise exceptions/errors | `pytest.raises` | `Assert.Throws` | `toThrow()`     | `expectException` |
+| **Speed**          | Very fast, no external dependency             | ⚡⚡⚡            | ⚡⚡⚡            | ⚡⚡⚡            | ⚡⚡⚡              |
 
 ---
 
@@ -505,9 +475,7 @@ class DiscountServiceTest extends TestCase
 * **Mocks and stubs** are often used when dependencies exist.
 * Every language has its **idiomatic testing framework**, but the philosophy is the same.
 
-
 ## What’s Next in the Series
 
 Up next: **Integration Testing in Depth** — choosing boundaries, taming real dependencies, keeping tests reliable without turning them into E2E.
 Stay tuned!
-

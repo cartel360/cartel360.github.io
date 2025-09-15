@@ -1,17 +1,14 @@
 ---
 layout: post
-title: "Integration Testing in Depth : Test components working together (and not hate it) Part 3"
+title: "Integration Testing in Depth : Test components working together (and not hate it) - Part 3"
 categories: [Testing, Integration-Testing, Software Development]
 image: /assets/img/software-testing.webp
 tags: [Testing, Software Development, Quality Assurance]
 description: Integration tests sit in the sweet spot between tiny, fast unit tests and slow, expensive end-to-end tests. They verify that multiple parts of your system cooperate correctly, e.g., your API layer talks to the DB the way you expect, background jobs persist state, or your service correctly handles responses from an external API.
 ---
-
-
 Integration tests sit in the sweet spot between tiny, fast unit tests and slow, expensive end-to-end tests. They verify that multiple parts of your system cooperate correctly e.g., your API layer talks to the DB the way you expect, background jobs persist state, or your service correctly handles responses from an external API.
 
 This post is a practical, language-agnostic guide to integration testing, plus **side-by-side, runnable patterns** for **Python**, **C# (.NET)**, **TypeScript (Node/Express)** and **PHP (Laravel)** so you can immediately apply the ideas in your stack.
-
 
 ## What integration tests are (and are not)
 
@@ -29,7 +26,6 @@ This post is a practical, language-agnostic guide to integration testing, plus *
 * Ensuring message queue jobs and workers together produce expected state.
 * Checking how your app handles external API payloads (with a mock or stub of that API).
 
-
 ## Goals & tradeoffs
 
 **Goals**
@@ -43,7 +39,6 @@ This post is a practical, language-agnostic guide to integration testing, plus *
 * Slower than unit tests.
 * Harder to make fully deterministic (external services, timing).
 * Need careful setup/teardown to stay reliable.
-
 
 ## Core patterns & recommendations
 
@@ -77,20 +72,17 @@ This post is a practical, language-agnostic guide to integration testing, plus *
 
 * No sleeps/time-based races. Use blocking signals, polling with timeouts, or deterministic stubs.
 
-
 ## When to mock vs when to use real services
 
 * **Real DB**: Prefer real DB engine (Postgres, MySQL). SQLite is OK for many cases but can mask engine-specific issues.
 * **External APIs**: Mock in integration tests. Use contract testing (Pact) to keep mocked expectations in-sync.
 * **Caches/Queues**: Use in-memory or test doubles unless you must validate the actual middleware behavior.
 
-
 ## Observability: make debugging failing integration tests easy
 
 * Emit structured logs during tests (include request IDs).
 * Capture and print responses and DB state on failure.
 * Keep helpful assertion messages.
-
 
 ## Checklist: test lifecycle
 
@@ -100,7 +92,6 @@ This post is a practical, language-agnostic guide to integration testing, plus *
 4. Assert state persisted, side effects happened (e.g., DB row created, message pushed, HTTP call stubbed).
 5. Tear down (transaction rollback, truncate tables, drop DB).
 
-
 ## Common pitfalls & fixes
 
 * **Flaky tests**: avoid sleep-based waiting; use retry-with-timeout polling and assert deterministically.
@@ -108,13 +99,11 @@ This post is a practical, language-agnostic guide to integration testing, plus *
 * **Parallel test collisions**: give tests separate DBs or use unique table prefixes.
 * **“Works locally but fails in CI”**: mirror CI environment locally using Docker/Testcontainers and run tests there.
 
-
 # Example integration tests (side-by-side)
 
 Scenario used across examples:
 
 > A `POST /users` endpoint that creates a user record in the database and triggers an HTTP call to an external email service (welcome email). Integration test will create a user via HTTP, verify DB row exists, and verify the email call was made (mocked).
-
 
 ## Python — FastAPI + SQLAlchemy + pytest + requests-mock
 
@@ -185,7 +174,6 @@ def test_create_user_and_send_email(client):
 * For CI, replace sqlite with Testcontainers Postgres: `create_app(postgres_url, ...)`.
 * Use DB migrations in setup if using a real DB.
 
-
 ## C# (.NET) — ASP.NET Core + WebApplicationFactory + InMemory DB / Testcontainer
 
 **Notes:** Use `WebApplicationFactory<TEntryPoint>` to spin the app in tests and override service registrations for test doubles.
@@ -238,7 +226,6 @@ public class UsersIntegrationTests : IClassFixture<WebApplicationFactory<Program
 
 * For a real DB in CI, use `Testcontainers` .NET to spin up Postgres and set EF Core connection string.
 * Overriding services avoids brittle HTTP stubbing, and keeps assertions in-process.
-
 
 ## TypeScript (Node/Express) — supertest + sqlite in-memory + nock
 
@@ -299,7 +286,6 @@ describe("POST /users", () => {
 * For complex schemas, use migrations in test setup or run a dedicated test DB with `sqlite` file per test.
 * For Postgres in CI, spin up DB via docker-compose or Testcontainers Node.
 
-
 ## PHP (Laravel) — HTTP tests + RefreshDatabase + Http::fake()
 
 **Notes:** Laravel has excellent integration testing helpers. `RefreshDatabase` runs migrations and transacts where possible. Use `Http::fake()` to intercept external HTTP.
@@ -357,7 +343,6 @@ class CreateUserTest extends TestCase
 * Laravel’s `RefreshDatabase` will use in-memory sqlite if configured, otherwise migrate a test DB.
 * Use `Queue::fake()` to test that jobs were dispatched without executing background workers.
 
-
 # Practical integration testing strategies
 
 ### Use transactions for isolation
@@ -389,7 +374,6 @@ class CreateUserTest extends TestCase
 
 * Either run job handlers inline (synchronously) in tests, use fake queues that record enqueued messages, or run a worker process in CI that reads from test queue.
 
-
 # How many integration tests should you write?
 
 No fixed number. Aim for:
@@ -400,15 +384,12 @@ No fixed number. Aim for:
 
 A practical rule: write integration tests for **each major DB operation and for the essential external integrations**.
 
-
 # Debugging failing integration tests
 
 * Print request/response bodies and DB rows on failure.
 * Capture network traffic (or enable higher logging).
 * Reproduce the failing test locally with the same CI container setup (Testcontainers makes that easy).
 * If a test is flaky, add instrumentation and increase visibility; temporary retries mask real issues.
-
-
 
 # Sample integration test checklist
 
@@ -420,7 +401,6 @@ Before merging an integration test into CI:
 * [ ] Test cleans up (transaction rollback or truncation).
 * [ ] No sleeps or time-based races.
 * [ ] Test is focused on behavior, not implementation.
-
 
 # Wrapping up & next steps
 
