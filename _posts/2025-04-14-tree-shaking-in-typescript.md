@@ -3,7 +3,7 @@ layout: post
 title: Tree Shaking in TypeScript
 categories: [Software Development]
 image: /assets/img/tree-shaking.jpg
-tags: [Typescript, Performance]
+tags: [TypeScript, Performance]
 description: Tree shaking is a crucial optimization technique in modern JavaScript and TypeScript development that helps eliminate dead code from your final bundle. This article will explore tree shaking in depth, explain how it works with TypeScript, and provide practical code examples to demonstrate its benefits.
 ---
 
