@@ -10,7 +10,7 @@ mermaid: true
 
 Software testing is more than writing a few unit tests and hoping for the best. To deliver reliable software, teams need a **balanced testing strategy** — one that combines **Unit, Integration, and End-to-End (E2E) tests** in the right proportions. This is where the **Testing Pyramid** comes in.
 
-In this final part of our testing series, we’ll:
+In this final part of our testing series, we’ll: 
 
 * Understand the **Testing Pyramid model**.
 * Explore how to **balance different types of tests**.
@@ -152,7 +152,7 @@ By following the **Testing Pyramid**, integrating tests into **CI/CD pipelines**
 * Higher developer confidence.
 * Happier end-users.
 
-Testing isn’t just about catching bugs — it’s about building **trustworthy software** at scale.
+Testing isn’t just about catching bugs, it’s about building **trustworthy software** at scale.
 
 
 **Next Steps for You:**
