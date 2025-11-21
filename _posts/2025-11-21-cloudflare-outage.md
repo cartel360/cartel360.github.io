@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "What Engineers Can Learn From the Recent Cloudflare Outage"
+title: "What Engineers Can Learn From the Cloudflare Outage (November 2025)"
 categories: [Engineering, DevOps, SRE, Cloudflare, Outages, Distributed Systems]
 image: /assets/img/cloudflare-outage.jpg
 tags: [Cloudflare, Outages, Distributed Systems, Incident Response, Engineering Best Practices]
-description: Learn the key takeaways from the recent Cloudflare outage, including the importance of configuration management, the dangers of hidden assumptions, and best practices for incident response.
+description: Learn the key takeaways from the Cloudflare outage (November 2025), including the importance of configuration management, the dangers of hidden assumptions, and best practices for incident response.
 mermaid: true
 ---
 
