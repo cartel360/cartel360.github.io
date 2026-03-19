@@ -22,7 +22,6 @@ The issue isn’t always logic.
 
 It’s often a **broken contract between systems**.
 
----
 
 # The Problem: Silent API Breakages
 
@@ -36,7 +35,6 @@ Everything depends on one thing:
 
 > The consumer and provider agreeing on **what data looks like**
 
----
 
 ## A Real Example
 
@@ -66,7 +64,6 @@ public IActionResult GetUser(int id)
 }
 ```
 
----
 
 ### Consumer Interface (Angular Example)
 
@@ -80,7 +77,6 @@ export interface User {
 
 Everything works perfectly.
 
----
 
 ## Then a “Small” Change Happens
 
@@ -93,7 +89,6 @@ public class UserDto
 }
 ```
 
----
 
 ### Production Result
 
@@ -103,7 +98,6 @@ user.name //  undefined
 
 The UI breaks.
 
----
 
 ## Why Didn't Traditional Tests Catch This?
 
@@ -113,7 +107,6 @@ The UI breaks.
 
 But the **contract between systems changed**—and traditional tests don't verify that.
 
----
 
 # What is Contract Testing?
 
@@ -126,14 +119,12 @@ A **contract** defines:
 * Required fields
 * Data types
 
----
 
 ## In Simple Terms
 
 > The **consumer** (frontend, app, or service) defines expectations
 > The **provider** (API or service) must satisfy them
 
----
 
 # Consumer vs Provider
 
@@ -149,7 +140,6 @@ A **contract** defines:
 * Must not break expectations
 * Examples: .NET API, Node.js backend, Python service, GraphQL endpoint
 
----
 
 # How Contract Testing Works
 
@@ -158,8 +148,6 @@ Instead of relying only on integration tests:
 1. Angular defines expectations
 2. A contract file is generated
 3. .NET verifies the contract
-
----
 
 ## Flow
 
@@ -173,13 +161,10 @@ Saved as JSON/YAML
 Provider verifies against contract (e.g., .NET API)
 ```
 
----
-
 # Practical Example
 
 *(.NET backend + Angular frontend as an example)*
 
----
 
 ## Step 1: Define Expectations in Consumer (Angular example)
 
@@ -195,8 +180,6 @@ it("should fetch user correctly", async () => {
   expect(user).toEqual(expectedUser);
 });
 ```
-
----
 
 ## Generated Contract (Simplified)
 
@@ -216,8 +199,6 @@ it("should fetch user correctly", async () => {
 }
 ```
 
----
-
 ## Step 2: Verify in Provider (.NET API example)
 
 Install Pact:
@@ -225,8 +206,6 @@ Install Pact:
 ```bash
 dotnet add package PactNet
 ```
-
----
 
 ### Provider Test
 
@@ -243,8 +222,6 @@ public void VerifyPact()
 }
 ```
 
----
-
 ## If Provider Breaks the Contract
 
 ```csharp
@@ -255,7 +232,6 @@ public string FullName { get; set; }
 
 - You catch the issue before deployment
 
----
 
 # Where Contract Testing Fits
 
@@ -273,27 +249,19 @@ Unit Tests
 (business logic)
 ```
 
----
-
 # Why This Matters in Real Projects
 
 ## Safer Refactoring
 
 Change DTOs, schema, or API responses without fear. Contract tests verify nothing broke.
 
----
-
 ## Independent Development
 
 Consumer and provider teams move faster. Changes are caught instantly, not in production.
 
----
-
 ## Faster Debugging
 
 Failures clearly show what broke
-
----
 
 ## Stronger CI/CD Pipelines
 
@@ -305,11 +273,9 @@ Deploy → Only if both pass
 
 This works with any tech stack.
 
----
 
 # Common Mistakes
 
----
 
 ## Over-Specifying Data
 
@@ -325,29 +291,21 @@ Good:
 "name": "string"
 ```
 
----
-
 ## Testing Everything
 
 Only validate fields your frontend actually uses
 
----
 
 ## Ignoring Versioning
 
 Breaking contracts without versioning leads to production issues
 
----
 
 # Best Practices
-
----
 
 ## Keep Contracts Minimal
 
 Focus only on required fields
-
----
 
 ## Version Your API
 
@@ -356,19 +314,15 @@ Focus only on required fields
 /api/v2/users
 ```
 
----
-
 ## Automate in CI/CD
 
 Contracts should be generated and verified automatically
 
----
 
 ## Use Realistic Data
 
 Avoid unrealistic mocks
 
----
 
 # Final Takeaway
 
@@ -377,8 +331,6 @@ Avoid unrealistic mocks
 > E2E tests verify user flows
 >
 > **Contract tests verify agreements**
-
----
 
 
 > “Most production bugs aren’t failures… they’re misunderstandings between systems.”
