@@ -110,6 +110,8 @@ But the **contract between systems changed**—and traditional tests don't verif
 
 # What is Contract Testing?
 
+In Contract Testing, a contract is a formal specification of expected behavior and communication rules between two or more components, services or systems.
+
 > **Contract testing ensures that your service provider always matches what the consumer expects.**
 
 A **contract** defines:
@@ -277,7 +279,7 @@ This works with any tech stack.
 # Common Mistakes
 
 
-## Over-Specifying Data
+### Over-Specifying Data
 
 Bad:
 
@@ -291,35 +293,35 @@ Good:
 "name": "string"
 ```
 
-## Testing Everything
+### Testing Everything
 
 Only validate fields your frontend actually uses
 
 
-## Ignoring Versioning
+### Ignoring Versioning
 
 Breaking contracts without versioning leads to production issues
 
 
 # Best Practices
 
-## Keep Contracts Minimal
+### Keep Contracts Minimal
 
 Focus only on required fields
 
-## Version Your API
+### Version Your API
 
 ```
 /api/v1/users
 /api/v2/users
 ```
 
-## Automate in CI/CD
+### Automate in CI/CD
 
 Contracts should be generated and verified automatically
 
 
-## Use Realistic Data
+### Use Realistic Data
 
 Avoid unrealistic mocks
 
