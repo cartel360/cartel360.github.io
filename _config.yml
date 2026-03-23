@@ -133,13 +133,13 @@ kramdown:
 
 collections:
   tabs:
-    # Chirpy: `_tabs/*.md` → `site.tabs`; sidebar labels `_data/locales/<lang>.yml` → `tabs.*`. Output follows each file’s permalink (e.g. `_site/work/`), not a shared folder name like `case-studies/`.
+    # Chirpy: `_tabs/*.md` → `site.tabs`; sidebar labels `_data/locales/<lang>.yml` → `tabs.*`. Output follows each file’s permalink (e.g. `_site/portfolio/`), not a shared folder name like `case-studies/`.
     output: true
     sort_by: order
   case_studies:
     output: true
     sort_by: order
-    # Keep separate from /work/ so the Work tab always maps to work/index.html (no nested route clash on hosts like GitHub Pages).
+    # Keep separate from /portfolio/ (Work tab) so routes never clash with case study URLs on static hosts.
     permalink: /case-studies/:name/
 
 defaults:
@@ -190,6 +190,10 @@ compress_html:
   blanklines: false
   ignore:
     envs: [development]
+
+# Leading underscore would normally be ignored by Jekyll; include so Cloudflare gets `/work` → `/portfolio/` redirects.
+include:
+  - _redirects
 
 exclude:
   - "*.gem"

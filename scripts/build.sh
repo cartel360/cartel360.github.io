@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Cloudflare Pages / CI: same as local production build, then verify critical output.
-# Jekyll writes HTML routes at _site/<path>/index.html — e.g. Work tab → _site/work/index.html
+# Jekyll writes HTML routes at _site/<path>/index.html — e.g. Work tab → _site/portfolio/index.html
 # (That is next to _site/assets/, not inside assets/.)
 set -euo pipefail
 
@@ -10,8 +10,8 @@ export JEKYLL_ENV="${JEKYLL_ENV:-production}"
 bundle install
 bundle exec jekyll build
 
-if [[ ! -f _site/work/index.html ]]; then
-  echo "ERROR: _site/work/index.html is missing after build."
+if [[ ! -f _site/portfolio/index.html ]]; then
+  echo "ERROR: _site/portfolio/index.html is missing after build."
   echo "Contents of _site (top level):"
   ls -la _site || true
   echo "---"
@@ -19,4 +19,4 @@ if [[ ! -f _site/work/index.html ]]; then
   exit 1
 fi
 
-echo "OK: _site/work/index.html exists ($(wc -c < _site/work/index.html) bytes)"
+echo "OK: _site/portfolio/index.html exists ($(wc -c < _site/portfolio/index.html) bytes)"
