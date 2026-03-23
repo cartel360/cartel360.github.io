@@ -4,6 +4,7 @@ icon: fas fa-briefcase
 order: 5
 date: 2026-03-24
 hide_panel: true
+permalink: /work/
 description: Portfolio and case studies — problems, ownership, decisions, trade-offs, and impact.
 ---
 

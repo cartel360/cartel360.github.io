@@ -138,7 +138,8 @@ collections:
   case_studies:
     output: true
     sort_by: order
-    permalink: /work/:name/
+    # Keep separate from /work/ so the Work tab always maps to work/index.html (no nested route clash on hosts like GitHub Pages).
+    permalink: /case-studies/:name/
 
 defaults:
   - scope:
