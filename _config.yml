@@ -133,7 +133,7 @@ kramdown:
 
 collections:
   tabs:
-    # Chirpy: `_tabs/*.md` → `site.tabs`; labels in `_data/locales/<lang>.yml` under `tabs:` (not env-specific).
+    # Chirpy: `_tabs/*.md` → `site.tabs`; sidebar labels `_data/locales/<lang>.yml` → `tabs.*`. Output follows each file’s permalink (e.g. `_site/work/`), not a shared folder name like `case-studies/`.
     output: true
     sort_by: order
   case_studies:
@@ -195,6 +195,7 @@ exclude:
   - "*.gem"
   - "*.gemspec"
   - tools
+  - scripts
   - README.md
   - CHANGELOG.md
   - LICENSE
