@@ -50,6 +50,9 @@ jobs:
         env:
           JEKYLL_ENV: "production"
 
+      - name: Verify Work tab output exists
+        run: test -f "_site${{ steps.pages.outputs.base_path }}/work/index.html"
+
 #       - name: Test site
 #         run: |
 #           bundle exec htmlproofer _site --disable-external --check-html --allow_hash_href
