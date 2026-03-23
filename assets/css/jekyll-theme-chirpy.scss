@@ -1,0 +1,560 @@
+---
+---
+
+@import 'main';
+
+/* append your custom style below */
+
+/* --- Full-width Work + case studies (hide_panel / body.work-wide-page) --- */
+.work-wide-page #main-wrapper {
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--sidebar-bg) 88%, var(--main-bg)) 0%,
+    var(--main-bg) 28%,
+    var(--main-bg) 100%
+  );
+}
+
+.work-wide-container {
+  max-width: 1320px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.work-wide-main .content {
+  max-width: 72rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.work-wide-page .dynamic-title {
+  font-size: clamp(2rem, 4.5vw, 2.75rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.15;
+  margin-bottom: 0.25rem;
+  background: linear-gradient(
+    120deg,
+    var(--heading-color) 0%,
+    color-mix(in srgb, var(--heading-color) 75%, var(--link-color)) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@supports not (background-clip: text) {
+  .work-wide-page .dynamic-title {
+    background: none;
+    -webkit-text-fill-color: unset;
+    color: var(--heading-color);
+  }
+}
+
+.work-detail .content {
+  max-width: 50rem;
+}
+
+.work-detail .dynamic-title {
+  -webkit-text-fill-color: unset !important;
+  background: none !important;
+  color: var(--heading-color);
+}
+
+/* Hero band (Work index) */
+.work-hero {
+  position: relative;
+  margin: 0 0 2.25rem;
+  padding: 0;
+  border-radius: 1rem;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--link-color) 22%, var(--bs-border-color));
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.04) inset,
+    0 1rem 2.5rem rgba(0, 0, 0, 0.08);
+}
+
+[data-mode='dark'] .work-hero {
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.06) inset,
+    0 1rem 2.5rem rgba(0, 0, 0, 0.35);
+}
+
+.work-hero__bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      ellipse 90% 70% at 100% -10%,
+      color-mix(in srgb, var(--link-color) 28%, transparent) 0%,
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse 60% 50% at 0% 100%,
+      color-mix(in srgb, var(--link-color) 12%, transparent) 0%,
+      transparent 50%
+    ),
+    linear-gradient(
+      145deg,
+      var(--card-bg) 0%,
+      color-mix(in srgb, var(--sidebar-bg) 70%, var(--card-bg)) 100%
+    );
+  opacity: 1;
+}
+
+.work-hero__bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    -14deg,
+    transparent,
+    transparent 14px,
+    color-mix(in srgb, var(--link-color) 7%, transparent) 14px,
+    color-mix(in srgb, var(--link-color) 7%, transparent) 15px
+  );
+  opacity: 0.45;
+  mask-image: linear-gradient(180deg, black 35%, transparent 100%);
+  pointer-events: none;
+}
+
+.work-hero__inner {
+  position: relative;
+  z-index: 1;
+  padding: 1.75rem 1.75rem 1.85rem;
+}
+
+@media (min-width: 768px) {
+  .work-hero__inner {
+    padding: 2rem 2.25rem 2.1rem;
+  }
+}
+
+.work-hero__kicker {
+  display: inline-block;
+  margin: 0 0 0.65rem;
+  padding: 0.25rem 0.65rem;
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--link-color);
+  background: color-mix(in srgb, var(--link-color) 14%, transparent);
+  border: 1px solid color-mix(in srgb, var(--link-color) 35%, var(--bs-border-color));
+  border-radius: 2rem;
+}
+
+.work-hero__lede {
+  margin: 0;
+  max-width: 42rem;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: var(--text-muted-color);
+}
+
+/* --- Work / portfolio tab (_tabs/work.md) --- */
+.work-page {
+  margin-top: 0.25rem;
+}
+
+.work-lead {
+  margin: 0 0 2rem;
+  padding: 1rem 1.25rem;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: var(--text-muted-color);
+  background: var(--sidebar-bg);
+  background: linear-gradient(
+    135deg,
+    var(--sidebar-bg) 0%,
+    color-mix(in srgb, var(--link-color) 6%, var(--sidebar-bg)) 100%
+  );
+  border: 1px solid var(--bs-border-color);
+  border-left: 4px solid var(--link-color);
+  border-radius: 0 0.5rem 0.5rem 0;
+  box-shadow: var(--card-shadow);
+}
+
+.work-page > h2:first-of-type {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  padding-bottom: 0.85rem;
+  font-size: clamp(1.35rem, 2.5vw, 1.65rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.3;
+  color: var(--heading-color);
+  border-bottom: 1px solid var(--bs-border-color);
+  position: relative;
+}
+
+.work-page > h2:first-of-type::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 3.5rem;
+  height: 2px;
+  background: var(--link-color);
+  border-radius: 2px;
+}
+
+.work-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 0.75rem;
+  margin: 0 0 1.75rem;
+  padding: 0.65rem 1rem;
+  font-size: 0.92rem;
+  background: var(--sidebar-bg);
+  border: 1px solid var(--bs-border-color);
+  border-radius: 0.375rem;
+}
+
+.work-meta__label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted-color);
+}
+
+.work-meta a {
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.work-meta a:hover {
+  text-decoration: underline;
+}
+
+.work-meta__sep {
+  color: var(--text-muted-color);
+  opacity: 0.6;
+}
+
+.work-page h3 {
+  margin-top: 2rem;
+  margin-bottom: 0.85rem;
+  padding-bottom: 0.35rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted-color);
+  border-bottom: 1px solid var(--bs-border-color);
+}
+
+.work-page h2 + h3 {
+  margin-top: 1.35rem;
+}
+
+.work-page h4 {
+  margin-top: 1.35rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--heading-color);
+}
+
+.work-page h4:first-child {
+  margin-top: 0;
+}
+
+.work-page hr {
+  margin: 2rem 0;
+  border: none;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--bs-border-color) 12%,
+    var(--bs-border-color) 88%,
+    transparent 100%
+  );
+}
+
+.work-page ul {
+  margin-bottom: 0.5rem;
+}
+
+.work-page ul > li {
+  margin: 0.4rem 0;
+  padding-left: 0.15rem;
+}
+
+.work-page ul ul {
+  margin-top: 0.35rem;
+  margin-bottom: 0.35rem;
+}
+
+.work-page p + p {
+  margin-top: 0.75rem;
+}
+
+.work-page em {
+  font-size: 0.95rem;
+  color: var(--text-muted-color);
+}
+
+/* Work index — card grid (_tabs/work.md) */
+.work-index {
+  margin-top: 0.25rem;
+}
+
+.work-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 20rem), 1fr));
+  gap: 1.75rem;
+}
+
+.work-card {
+  --work-card-accent: var(--link-color);
+  display: block;
+  position: relative;
+  min-height: 17.5rem;
+  text-decoration: none !important;
+  color: inherit !important;
+  border-radius: 0.75rem;
+  border: 1px solid var(--bs-border-color);
+  background: var(--card-bg);
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
+  isolation: isolate;
+  transition:
+    transform 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.28s ease,
+    border-color 0.2s ease;
+}
+
+.work-card:hover {
+  transform: translateY(-4px);
+  border-color: color-mix(in srgb, var(--work-card-accent) 45%, var(--bs-border-color));
+  box-shadow:
+    0 0.25rem 0 rgba(0, 0, 0, 0.04),
+    0 1rem 2.5rem rgba(0, 0, 0, 0.1);
+}
+
+[data-mode='dark'] .work-card:hover {
+  box-shadow:
+    0 0.25rem 0 rgba(255, 255, 255, 0.04),
+    0 1rem 2.5rem rgba(0, 0, 0, 0.55);
+}
+
+.work-card:focus-visible {
+  outline: 2px solid var(--link-color);
+  outline-offset: 3px;
+}
+
+/* Left accent bar */
+.work-card__accent {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(
+    180deg,
+    var(--work-card-accent) 0%,
+    color-mix(in srgb, var(--work-card-accent) 65%, var(--heading-color)) 100%
+  );
+  z-index: 2;
+  opacity: 0.95;
+  transition: width 0.25s ease;
+}
+
+.work-card:hover .work-card__accent {
+  width: 5px;
+}
+
+/* Soft glow blob (hover) */
+.work-card__glow {
+  position: absolute;
+  right: -20%;
+  top: -40%;
+  width: 70%;
+  height: 80%;
+  background: radial-gradient(
+    ellipse at center,
+    color-mix(in srgb, var(--work-card-accent) 18%, transparent) 0%,
+    transparent 65%
+  );
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.work-card:hover .work-card__glow {
+  opacity: 1;
+}
+
+.work-card__inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: inherit;
+  padding: 1.35rem 1.35rem 1.25rem 1.5rem;
+}
+
+.work-card__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.work-card__eyebrow {
+  flex-shrink: 0;
+  padding: 0.2rem 0.55rem;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-muted-color);
+  background: var(--sidebar-bg);
+  border: 1px solid var(--bs-border-color);
+  border-radius: 2rem;
+}
+
+.work-card__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.1rem;
+  height: 3.1rem;
+  font-size: 1.35rem;
+  color: var(--work-card-accent);
+  background: linear-gradient(
+    145deg,
+    color-mix(in srgb, var(--work-card-accent) 16%, var(--card-bg)) 0%,
+    color-mix(in srgb, var(--work-card-accent) 6%, var(--card-bg)) 100%
+  );
+  border: 1px solid color-mix(in srgb, var(--work-card-accent) 22%, var(--bs-border-color));
+  border-radius: 0.65rem;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  transition:
+    transform 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.28s ease;
+}
+
+.work-card:hover .work-card__icon {
+  transform: scale(1.06) rotate(-2deg);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 0.35rem 0.85rem color-mix(in srgb, var(--work-card-accent) 25%, transparent);
+}
+
+.work-card__body {
+  flex: 1 1 auto;
+}
+
+.work-card__title {
+  margin: 0 0 0.55rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.28;
+  letter-spacing: -0.03em;
+  color: var(--heading-color);
+}
+
+.work-card__excerpt {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.58;
+  color: var(--text-muted-color);
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .work-card,
+  .work-card__icon,
+  .work-card__cta-icon,
+  .work-card__accent {
+    transition: none;
+  }
+
+  .work-card:hover {
+    transform: none;
+  }
+
+  .work-card:hover .work-card__icon {
+    transform: none;
+  }
+
+  .work-card:hover .work-card__cta-icon {
+    transform: none;
+  }
+}
+
+.work-card__cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--bs-border-color);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--work-card-accent);
+}
+
+.work-card__cta-text {
+  transition: transform 0.2s ease;
+}
+
+.work-card__cta-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.85rem;
+  height: 1.85rem;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--work-card-accent) 12%, transparent);
+  transition:
+    transform 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    background 0.2s ease;
+}
+
+.work-card:hover .work-card__cta-icon {
+  transform: translateX(4px);
+  background: color-mix(in srgb, var(--work-card-accent) 22%, transparent);
+}
+
+.work-card:hover .work-card__cta {
+  color: color-mix(in srgb, var(--work-card-accent) 90%, var(--heading-color));
+}
+
+/* Case study detail — back link */
+.work-back-nav {
+  margin: 0 0 1rem;
+}
+
+.work-back-link {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none !important;
+  color: var(--text-muted-color) !important;
+  transition: color 0.15s ease;
+}
+
+.work-back-link:hover {
+  color: var(--link-color) !important;
+}
+
+.case-study-article .dynamic-title {
+  margin-bottom: 1.25rem;
+}

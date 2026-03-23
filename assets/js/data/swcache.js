@@ -6,7 +6,7 @@ layout: compress
 
 const resource = [
     /* --- CSS --- */
-    '{{ "/assets/css/style.css" | relative_url }}',
+    '{{ "/assets/css/jekyll-theme-chirpy.css" | relative_url }}',
 
     /* --- PWA --- */
     '{{ "/app.js" | relative_url }}',
@@ -18,6 +18,10 @@ const resource = [
 
     {% for tab in site.tabs %}
         '{{ tab.url | relative_url }}',
+    {% endfor %}
+
+    {% for cs in site.case_studies %}
+        '{{ cs.url | relative_url }}',
     {% endfor %}
 
     /* --- Favicons & compressed JS --- */

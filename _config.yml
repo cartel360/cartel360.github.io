@@ -135,6 +135,10 @@ collections:
   tabs:
     output: true
     sort_by: order
+  case_studies:
+    output: true
+    sort_by: order
+    permalink: /work/:name/
 
 defaults:
   - scope:
@@ -157,6 +161,13 @@ defaults:
     values:
       layout: page
       permalink: /:title/
+  - scope:
+      path: ""
+      type: case_studies
+    values:
+      layout: case_study
+      comments: false
+      hide_panel: true
   - scope:
       path: assets/img/favicons
     values:
