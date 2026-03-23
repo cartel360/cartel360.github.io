@@ -13,7 +13,7 @@ description: Portfolio and case studies — problems, ownership, decisions, trad
     <div class="work-hero__inner">
       <p id="work-hero-heading" class="work-hero__kicker">Portfolio</p>
       <p class="work-hero__lede">
-        Case studies with real constraints: ownership, trade-offs, and impact—not a list of repos. Pick a project for the full write-up.
+        A collection of things I’ve built, broken, and eventually fixed. Expect less “todo apps” and more real-world systems complete with questionable decisions, hard trade-offs, and the occasional “this seemed like a good idea at the time.” Each case study covers the problem, what I owned, the decisions I made, what went wrong, and what I’d absolutely do differently (given another sleepless night and enough coffee).
       </p>
     </div>
   </section>
