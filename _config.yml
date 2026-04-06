@@ -216,5 +216,5 @@ jekyll-archives:
     tag: /tags/:name/
     category: /categories/:name/
 
-plugins:
-  - jekyll-feed
+# Chirpy’s Atom feed is assets/feed.xml (overridden here; excludes `hidden` posts). jekyll-feed is not loaded to avoid a second /feed.xml.
+plugins: []
