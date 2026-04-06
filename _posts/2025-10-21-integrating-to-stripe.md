@@ -8,6 +8,8 @@ description: Learn the differences between Stripe Connect's Standard, Express, a
 mermaid: true
 ---
 
+> **Update (2026):** Stripe’s **[Accounts v2 API](https://docs.stripe.com/connect/accounts-v2)** uses a unified `Account` with **configurations** (`merchant`, `customer`, `recipient`) so one identity can sell, pay your platform, and receive transfers without parallel **Customer** IDs. For a **full guide** in the same spirit as this article—but aligned to v2—see **[Stripe Connect on Accounts v2](/posts/stripe-connect-accounts-v2/)**. **Everything below** remains the reference for **Accounts v1** (`Account.create`, OAuth, Account Links as shown) and is still supported.
+{: .prompt-tip }
 
 Stripe offers a powerful ecosystem for building **payment platforms**, **marketplaces**, and **financial applications**.
 One of its most powerful products, **Stripe Connect**, allows you to facilitate payments between multiple parties while maintaining flexibility over **branding, compliance,** and **user experience**.
