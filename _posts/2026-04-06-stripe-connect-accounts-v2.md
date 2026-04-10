@@ -11,7 +11,7 @@ description: >-
 mermaid: true
 # Listed nowhere (home, archives, categories, tags, feed, sitemap, search) but the page is built — share /posts/... for review.
 published: true
-hidden: true
+hidden: false
 ---
 
 This is the **Accounts v2** companion to the **[original Connect guide (Accounts v1)](/posts/integrating-to-stripe/)**. Same **platform concepts**—Standard, Express, Custom, money flow, compliance—but the **API shape** is the one Stripe describes in **[Connect and the Accounts v2 API](https://docs.stripe.com/connect/accounts-v2)**. Use the older post when you must stay on **v1** (`Account.create` with `type=express`, OAuth-only Standard flows, etc.). Use **this** post when you are designing around **one `Account`**, **configurations**, and **`customer_account`**.
