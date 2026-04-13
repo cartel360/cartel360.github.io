@@ -559,3 +559,19 @@
 .case-study-article .dynamic-title {
   margin-bottom: 1.25rem;
 }
+
+/* Sidebar panel — quip + post count (below Trending Tags) */
+#panel-article-stats.border-top {
+  border-color: color-mix(in srgb, var(--text-muted-color) 28%, transparent) !important;
+}
+
+.panel-article-stats .panel-heading {
+  font-size: 1rem;
+}
+
+.panel-article-stats__count {
+  color: var(--link-color) !important;
+  font-weight: 800;
+  font-size: 1.05em;
+  font-variant-numeric: tabular-nums;
+}

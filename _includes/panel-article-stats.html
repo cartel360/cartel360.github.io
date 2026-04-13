@@ -1,0 +1,11 @@
+<!-- Post count + quip below Trending Tags -->
+{% assign _post_count = site.posts | size %}
+<section id="panel-article-stats" class="panel-article-stats mt-4 pt-3 border-top">
+  <h2 class="panel-heading">{{ site.data.sidebar.article_stats.heading }}</h2>
+  <p class="small fst-italic text-muted mb-2 lh-sm">{{ site.data.sidebar.article_stats.joke }}</p>
+  <p class="small text-muted mb-0 lh-sm">
+    Published
+    <strong class="panel-article-stats__count">{{ _post_count }}</strong>
+    long-form posts (bugs sold separately.)
+  </p>
+</section>
