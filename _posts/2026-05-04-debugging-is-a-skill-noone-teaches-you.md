@@ -8,8 +8,6 @@ description: "Debugging is a critical skill that many developers struggle with. 
 mermaid: true
 ---
 
-# Debugging Is a Skill Nobody Teaches Properly
-
 > *You’ve been staring at the same bug for 2 hours.*
 You’ve restarted the server. Cleared cache. Added random `console.log`s.
 Somehow… it still doesn’t work.
