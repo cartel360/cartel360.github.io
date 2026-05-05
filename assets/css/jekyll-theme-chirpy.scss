@@ -575,3 +575,16 @@
   font-size: 1.05em;
   font-variant-numeric: tabular-nums;
 }
+
+/* Make the "Reality check" sidebar panel stand out */
+#panel-article-stats {
+  background: color-mix(in srgb, var(--link-color) 6%, var(--sidebar-bg));
+  padding: 0.9rem 0.95rem;
+  border-radius: 0.5rem;
+  border: 1px solid color-mix(in srgb, var(--link-color) 8%, var(--bs-border-color));
+  box-shadow: var(--card-shadow);
+}
+
+#panel-article-stats .panel-heading {
+  margin-bottom: 0.25rem;
+}
